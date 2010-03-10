@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"
+ "HTTP://www.w3c.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+ <head>
+  <title>Get Song Lengths</title>
+  <!--there are some variables declared in one .js file
+      and then used in other followinf .js files (ie: currPositionInPL)
+      so the order in which these are loaded is important -->
+  <script type="text/javascript" src="javascript/jquery-1.3.2.js"></script>
+  <script type="text/javascript" src="javascript/prototype.js"></script>
+  <script type="text/javascript" src="javascript/getLength.js"></script>
+  
+  <!--<link rel="stylesheet" type="text/css" href="stylesheets/index.css" /> -->
+  </head>
+  
+  <body> <!--onload="change_button()"-->
+  <!--<form action="getLength.html" onSubmit="process()">  
+<fieldset class="submit"> --> 
+<input id='submit_btn' class="submit" type="submit"  
+value="submit" onClick='beginProcess();'/>  <!--
+</fieldset>
+</form>-->
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+             id="trackTimer" width="350" height="25"
+             codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">
+         <param name="movie" value="trackTimer.swf" />
+         <param name="quality" value="high" />
+         <param name="bgcolor" value="#ffffff" />
+         <param name="allowScriptAccess" value="always" />
+         <embed src="trackTimer.swf" quality="high" bgcolor="#ffffff"
+             width="450" height="25" name="trackTimer" align="middle"
+             play="true" loop="false" quality="high" allowScriptAccess="always"
+             type="application/x-shockwave-flash"
+             pluginspage="http://www.macromedia.com/go/getflashplayer">
+         </embed>
+     </object>
+     
+<script>
+$(function () { // make this code initialize when DOM loads
+	$(':input').submit(function () { // optional: replace "form" with whatever CSS selector you want (ex: ID or class)
+		$('input[type="submit"]', this).replaceWith('<p><strong>Sending...</strong></p>'); // optional: change "Sending..." to something else
+	});
+});</script>
+
+</body>
+</html>

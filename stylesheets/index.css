@@ -1,0 +1,127 @@
+/*******
+The styles below are my take 
+on the example given at
+http://www.sitepoint.com/article/fancy-form-design-css/
+*******/
+body {
+  text-align:center;
+}
+
+.clear {
+	clear:both
+}
+#header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 60px;
+}
+#content {
+  position: absolute;
+  top: 50px;
+}
+.block {
+	width:400px;
+	margin:0 auto;
+	text-align:left;
+}
+fieldset {  
+  position: relative;  
+  float: left;  
+  clear: both;  
+  width: 100%;  
+  margin: 0 0 -1em 0;  
+  padding: 0 0 1em 0;  
+  border-style: none;  
+  border-top: 1px solid #BFBAB0;  
+  border-left: 1px solid #BFBAB0;  
+  border-right: 1px solid #BFBAB0;  
+  background-color: #F2EFE9;
+} 
+legend {  
+  padding: 0;  
+  color: #545351;  
+  font-weight: bold;
+}
+legend span {  
+  position: absolute;  
+  left: 0.74em;  
+  top: 0;  
+  margin-top: 0.5em;  
+  font-size: 135%;
+}
+fieldset ol {  
+  padding: 3.5em 1em 0 1em;  
+  list-style: none;
+}
+fieldset li {  
+  float: left;  
+  clear: left;  
+  width: 100%;  
+  padding-bottom: 1em;
+}
+fieldset.submit {  
+  float: none;  
+  width: auto;  
+  padding-top: 1.5em;  
+  padding-left: 10em;  
+  padding-right: 11.55em;
+  border-style: none;
+  border-top: 1px solid #BFBAB0;  
+  background-color: #FFFFFF;
+}
+label {  
+  float: left;  
+  width: 10em;  
+  margin-right: 1em;  
+  text-align: left;
+}
+label strong {
+  font-size: 10px;
+}
+#name_mess_icon{  
+  margin-top: 4px;
+  margin-left: 9px;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+#pass_mess_icon{
+  margin-top: 4px;
+  margin-left: 9px;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.hightlight {
+	border:2px solid #9F1319;
+	background:url(iconCaution.gif) no-repeat 2px
+}
+.loading {
+	float:right; 
+	background:url(ajax-loader.gif) no-repeat 1px; 
+	height:28px; 
+	width:28px; 
+	display:none;
+}
+.done {
+	background:url(iconIdea.gif) no-repeat 2px; 
+	padding-left:20px;
+	font-family:arial;
+	font-size:12px; 
+	width:70%; 
+	margin:20px auto; 
+	display:none
+}
+
+.fail {
+	background:url(iconIdea.gif) no-repeat 2px; 
+	padding-left:20px;
+	font-family:arial;
+	font-size:12px; 
+	width:70%; 
+	margin:20px auto; 
+	display:none
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"
+ "HTTP://www.w3c.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+ <head>
+  <title>Registration</title>
+  <!--there are some variables declared in one .js file
+      and then used in other following .js files (ie: currPositionInPL)
+      so the order in which these are loaded is important -->
+  <!--<script type="text/javascript" src="javascript/prototype.js"></script>-->
+  <script type="text/javascript" src="../javascript/jquery-1.3.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="registration.css" />
+  </head>
+  
+  <body onload="submit()">
+  <div id="header">
+  <div id="logo"><img src="../images/logo_banner.png" /></div>
+  </div>
+  <div id='content'>
+  <form id="reg_form" action="registration.php" method="post">  
+<fieldset>  
+<legend>Register for Setr</legend>  
+<ol>  
+<li>  
+<label for="username">Desired Username:</label>  
+<input id="username" name="username" class="text" type="text" />  
+</li>  
+<li>  
+<label for="firstpass">Desired Password:</label>  
+<input id="firstpass" name="firstpass" class="text" type="text" />  
+</li>  
+<li>  
+<label for="password">Please re-enter password:</label>  
+<input id="password" name="password" class="text" type="text" />  
+</li>
+<li>  
+<label for="email">Email:</label>  
+<input id="email" name="email" class="text" type="text" />  
+</li>  
+<li>  
+<label for="firstname">First name:</label>  
+<input id="firstname" name="firstname" class="text" type="text" />  
+</li>
+<li>  
+<label for="lastname">Last name:</label>  
+<input id="lastname" name="lastname" class="text" type="text" />  
+</li>  
+</ol>  
+</fieldset>  
+
+<fieldset class="submit">  
+<input class="submit" type="submit"  
+value="Sign me up!" />  
+</fieldset>
+</form>
+</div>
+<script>
+function submit(){$(function () { // make this code initialize when DOM loads
+	$('reg_form').submit(function () { // optional: replace "form" with whatever CSS selector you want (ex: ID or class)
+		$('input[type="submit"]', this).replaceWith('<p><strong>Sending...</strong></p>'); // optional: change "Sending..." to something else
+	});
+});}</script>
+</body>
+</html>

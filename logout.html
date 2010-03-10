@@ -1,0 +1,39 @@
+
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"
+ "HTTP://www.w3c.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+ <head>
+  <title>Logout</title>
+  <!--there are some variables declared in one .js file
+      and then used in other followinf .js files (ie: currPositionInPL)
+      so the order in which these are loaded is important -->
+  <script type="text/javascript" src="javascript/prototype.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
+  </head>
+  
+  <body>
+  <h5>Thanks for using Set.r!</h5>
+  <form action="php/login.php" method="post">  
+<fieldset>  
+<!--<legend>Sorry! Still in alpha!</legend>-->  
+<ol>  
+<li>  
+<label for="username">Username:</label>  
+<input id="username" name="username" class="text" type="text" />  
+</li>  
+<li>  
+<label for="password">Password</label>  
+<input id="password" name="password" class="text" type="password" />  
+</li>  
+</ol>  
+</fieldset>  
+
+<fieldset class="submit">  
+<input class="submit" type="submit"  
+value="login" />  
+</fieldset>
+</form>
+</body>
+</html>
+

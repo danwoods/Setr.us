@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(!isset($_SESSION['username'])){
-  header('Location: http://localhost/Setr.us/login_html.php');
+  header('Location: login_html.php');
   }
    ?>
 <!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"

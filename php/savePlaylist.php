@@ -19,13 +19,19 @@ $mySqlDateTime = $dateTime['year'] . '-' . $dateTime['month'] . '-' . $dateTime[
 //$playlistOldName = $username . '_' . $playlistOldName;
 //$playlistNewName = $username . '_' . $playlistNewName;
 
+include('db/db_login.php');
+
 //connect with database
-$con = mysql_connect("localhost","root","");
+$con = mysql_connect($db_host, $db_username, $db_pass);
+
+//if connection unsuccessful
 if(!$con){
+  //stop, and display error
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("musicneverstopped", $con);
+//specify database
+mysql_select_db($db_database, $con);
 //end connecting to database
 
 $sql= "INSERT INTO playlist (username, name, songs, dateTime)

@@ -1,6 +1,6 @@
 <?php
-	$db_host = 'localhost';
-	$db_database = 'musicneverstopped';
-	$db_username = 'root';
-	$db_pass = '';
+	$db_host = 'internal-db.s87280.gridserver.com';
+	$db_database = 'db87280_setr_us';
+	$db_username = 'db87280';
+	$db_pass = 'pan1ccmt';
 ?>

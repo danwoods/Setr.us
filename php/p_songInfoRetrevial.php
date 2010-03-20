@@ -11,13 +11,19 @@ header('Content-Type: text/xml');
 $elementId = ($_GET['elementId']);//selection = ($_GET['selection']);
 $encoreSongCount = 0; //debugging
 
+include('db/db_login.php');
+
 //connect with database
-$con = mysql_connect("localhost","root","");
+$con = mysql_connect($db_host, $db_username, $db_pass);
+
+//if connection unsuccessful
 if(!$con){
+  //stop, and display error
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("musicneverstopped", $con);
+//specify database
+mysql_select_db($db_database, $con);
 //end connecting to database
 
 //declare placeholders

@@ -5,6 +5,8 @@ header('Content-Type: text/xml');
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
+include('db/db_login.php');
+
 //pull variables
 $show = $_GET['artistShow'];
 $artistAbb = substr($show, 0, -10);;
@@ -12,16 +14,18 @@ $artistAbb = substr($show, 0, -10);;
 $show_array = array();
 
 //connect with database
-$con = mysql_connect("localhost","root","");
+$con = mysql_connect($db_host, $db_username, $db_pass);
 
-//if no connection
+//if connection unsuccessful
 if(!$con){
   //stop, and display error
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("musicneverstopped", $con);
+//specify database
+mysql_select_db($db_database, $con);
 //end connecting to database
+
 //create a variable to hold # of sets, current set number, and current set type
   $numOfSets = 1;
   $currentSet = '';

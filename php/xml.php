@@ -15,7 +15,7 @@ if($expandTo == 'fav_artist' || $expandTo == 'fav_years' || $expandTo == 'fav_sh
   $username = $_GET['username'];
   }
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

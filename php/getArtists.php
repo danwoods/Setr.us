@@ -5,7 +5,7 @@ header('Content-Type: text/xml');
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

@@ -11,7 +11,7 @@ header('Content-Type: text/xml');
 $elementId = ($_GET['elementId']);//selection = ($_GET['selection']);
 $encoreSongCount = 0; //debugging
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

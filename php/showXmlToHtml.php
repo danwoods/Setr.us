@@ -11,7 +11,7 @@ $show_html = "";
 //connect with database
 $con = mysql_connect("localhost","root","");
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

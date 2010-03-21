@@ -1,4 +1,3 @@
-
 <?php
 //need to preform error checking when adding songs to make sure there's  not two instances
 //of the same song
@@ -14,7 +13,7 @@ $username = ($_GET['username']);
 $songId = ($_GET['songId']);
 $incORdec = ($_GET['incORdec']);
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

@@ -19,7 +19,7 @@ $mySqlDateTime = $dateTime['year'] . '-' . $dateTime['month'] . '-' . $dateTime[
 //$playlistOldName = $username . '_' . $playlistOldName;
 //$playlistNewName = $username . '_' . $playlistNewName;
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

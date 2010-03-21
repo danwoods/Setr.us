@@ -14,7 +14,7 @@ if(isset($_GET['username'])){
 }
 $song_array = array();
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

@@ -8,7 +8,7 @@ error_reporting(E_ALL | E_STRICT);
 //pull variables
 $artist = $_GET['artist'];
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

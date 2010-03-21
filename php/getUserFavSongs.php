@@ -5,7 +5,7 @@ ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 header('Content-Type: text/xml');
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //pull variables
 //need to do some error checking here

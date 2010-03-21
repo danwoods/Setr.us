@@ -1,4 +1,3 @@
-
 <?php
 
 #THIS DOES NOT CHECK FOR ERRORS!!!#
@@ -17,7 +16,7 @@ $playlistNewName = $_GET['newPlaylistTitle'];
 $dateTime = getdate();
 $mySqlDateTime = $dateTime['year'] . '-' . $dateTime['month'] . '-' . $dateTime['mday'] . ' ' . $dateTime['hours'] . ':' . $dateTime['minutes'] . ':' . $dateTime['seconds'];
 
-include('db/db_login.php');
+include('../db/db_login.php');
 
 //connect with database
 $con = mysql_connect($db_host, $db_username, $db_pass);

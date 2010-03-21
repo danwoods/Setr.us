@@ -8,8 +8,6 @@ error_reporting(E_ALL | E_STRICT);
 //pull variables
 $show = $_GET['show'];
 $show_html = "";
-//connect with database
-$con = mysql_connect("localhost","root","");
 
 include('../db/db_login.php');
 

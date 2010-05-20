@@ -140,7 +140,7 @@ $(document).ready(function() {
 <b>Sorry, impropper username or password</b>
 </div>
 
-	<div class="form">
+<div class="form">
 	<form method="post" action="php/login.php">
 	
 <fieldset>  

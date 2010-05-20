@@ -19,7 +19,7 @@ mysql_select_db($db_database, $con);
 //end connecting to database
 
 //declare placeholders
-$artist = $_GET['artist'];
+$artist = addslashes($_GET['artist']);
 
 $result = mysql_query("SELECT * FROM artists WHERE name = '$artist'");
 

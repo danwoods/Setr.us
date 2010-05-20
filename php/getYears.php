@@ -5,8 +5,8 @@ header('Content-Type: text/xml');
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
-//pull variables
-$artist = $_GET['artist'];
+//pull variables, escape quotes
+$artist = ($_GET['artist']);
 
 include('../db/db_login.php');
 
@@ -24,7 +24,7 @@ mysql_select_db($db_database, $con);
 //end connecting to database
 
 //declare placeholders
-$years;
+$years = "";
 $year_array = array();
 
 //request a listing of all songs grouped by artist and store results in $result
@@ -38,12 +38,15 @@ if(!$result){
 
 //check if any results were returned
 if(mysql_num_rows($result) > 0){
-  //if yes cycle through all results, checking their artist
+  //if yes, save 'years'
   while($row = mysql_fetch_array($result)){
-    //check if the current songs artist is in the artist array
     $years = $row['years'];
-        }//end while
-    }//end if
+  }//end while
+}//end if
+
+else {
+  echo "No results returned";
+  }
     
 $year_array = explode("+", $years);
 

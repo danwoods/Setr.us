@@ -5,8 +5,8 @@ header('Content-Type: text/xml');
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
-//pull variables, escape quotes
-$artist = ($_GET['artist']);
+//pull variable
+$artist = $_GET['artist'];
 
 include('../db/db_login.php');
 

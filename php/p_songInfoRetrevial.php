@@ -5,10 +5,9 @@ error_reporting(E_ALL | E_STRICT);
 header('Content-Type: text/xml');
 
 //pull variables
-//need to do some error checking here
-$elementId = ($_GET['elementId']);
-$encoreSongCount = 0; //debugging
+$elementId = $_GET['elementId'];
 
+//include database credentials
 include('../db/db_login.php');
 
 //connect with database
@@ -27,7 +26,7 @@ mysql_select_db($db_database, $con);
 //attempt query
 $result = mysql_query("SELECT * FROM songs WHERE unique_song_id LIKE '$elementId%' ORDER BY unique_song_id ASC");
 
-//error check - see if this is safe to remove later
+//error check - if query was unsuccessful stop and display warning
 if(!$result){
   die(mysql_error());
 }
@@ -39,7 +38,7 @@ if(mysql_num_rows($result) > 0){
   $response = $dom->createElement('response');
   $encore = $dom->createElement('encoreSongs');
   $dom->appendChild($response);
-  $previousDate = "";
+  //and set some variables specific to xml
   $encore_songs = array(); 
   
   while($row = mysql_fetch_array($result)){
@@ -101,27 +100,25 @@ if(mysql_num_rows($result) > 0){
           $encore_songs[] = $encore_songs_obj;
         
         //append encore songs to $response
-        foreach($encore_songs as $a){
+        foreach($encore_songs as $a)
           $response->appendChild($a);
-        }
         
         //reset encore variables
         $encore = $dom->createElement('encoreSongs'); 
         $encore_songs = array();
         
-        $encoreSongCount = 0;
-      }
+      }//end if(isset)
       
       $encore->appendChild($song_info);
-      $encoreSongCount++;
       
-    }
+    }//end if($row['setOrEncore'] == 'encore')
       
     else{
-      //attach new song
+      //else just attach song to xml
       $response->appendChild($song_info);
     }
     
+    //set $previous to help test for new shows
     $previous = $row;
   }//end while
      
@@ -136,12 +133,12 @@ if(mysql_num_rows($result) > 0){
   //append encore songs to $response
   foreach($encore_songs as $a)
     $response->appendChild($a);
-      
 
+  //output xml
   $xmlString = $dom->saveXML(); 
   echo $xmlString;
-}//end if
-//////////////////////////////////////////
+  
+}//end if(mysql_num_rows($result) > 0)
 
 //close database connection
 mysql_close($con);//close mysql connection

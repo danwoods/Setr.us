@@ -46,7 +46,7 @@ if(!isset($_SESSION['username'])){
   <?php 
     if(isset($_SESSION['username'])){
       echo "<div id=\"user_settings_button\" onclick=\"javascript:window.open('http://localhost/MSNTesting/uploader/uploaderFrontEnd.php')\">" . /*($_SESSION['username']) . " : settings*/"Upload</div>";
-      echo "<div id=\"logout_button\" " . "onclick=\"javascript:location='http://localhost/musicneverstopped/php/logout.php'\">" . "logout" . "</div>";
+      echo "<div id=\"logout_button\" " . "onclick=\"javascript:location='http://localhost/Setr.us/php/logout.php'\">" . "Logout" . "</div>";
       }
     else{
       echo "<div id=\"login_button\" class=\"button\">login</div>";

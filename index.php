@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])){
  "HTTP://www.w3c.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
  <head>
-  <title>Set.r</title>
+  <title>Setr.us > Playlist</title>
   <!--there are some variables declared in one .js file
       and then used in other, following, .js files (ie: currPositionInPL)
       so the order in which these are loaded is important -->

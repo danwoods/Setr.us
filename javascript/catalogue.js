@@ -380,7 +380,6 @@ function addShows(artist, request, origElm, xml){
                                   },   
                                   show: { ready: true },
                                   hide: {
-                                    //when: 'mouseout'
                                     fixed: true,
                                     when: { event: 'mouseleave' }
                                   }
@@ -518,36 +517,36 @@ function addSet(xml, type, setNum, artistAbb, origElm){
         
         var addInfoSpan = $('<span>*</span>').attr('id', songId + 'addInfo')
                               .css('cursor', 'pointer')
-                              .appendTo(li);	
+                              .appendTo(li)
+                              .bind('mouseenter', function(){
+                                //create tool tip
+                                var selector = '#' + songId + 'addInfo';
 
-        //create tool tip
-        var selector = '#' + songId + 'addInfo';
-
-        $(selector).qtip({
-          content: songAddInfo,
-          position: {
-            corner: {
-              target: 'topMiddle',
-              tooltip: 'bottomLeft'
-            }
-          },
-          style: { 
-            tip: 'bottomLeft',
-            name: 'blue',
-            'font-size': 10 
-          },   
-          show: 'mouseover',
-          hide: {
-            when: 'mouseout',
-            fixed: true
-          }
-        }); //end creating tool tip
-      
+                                $(selector).qtip({
+                                  content: songAddInfo,
+                                  position: {
+                                    corner: {
+                                      target: 'topMiddle',
+                                      tooltip: 'bottomLeft'
+                                    }
+                                  },
+                                  style: { 
+                                    tip: 'bottomLeft',
+                                    name: 'blue',
+                                    'font-size': 10 
+                                  },   
+                                  show: { ready: true },
+                                  hide: {
+                                    fixed: true,
+                                    when: { event: 'mouseleave' }
+                                  }
+                                }); //end creating tool tip
+                              });//end binding mounseenter
       } //end if (addInfo)      
       
+      //setup suege indicator
       if(segue != "0")        
-        var addInfoSpan = $('<span class="segue_indicator"> ></span>').appendTo(li);	
-
+        var segue_indicator = $('<span class="segue_indicator"> ></span>').appendTo(li);	
                                
       //make new element draggable
       $(li).draggable({ helper: 'clone', appendTo: 'body' });

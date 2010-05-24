@@ -5,6 +5,7 @@ header('Content-Type: text/xml');
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
+//include database credentials
 include('../db/db_login.php');
 
 //connect with database
@@ -24,7 +25,7 @@ mysql_select_db($db_database, $con);
 $artist_array = array();
 
 //request a listing of all songs grouped by artist and store results in $result
-$result = mysql_query("SELECT * FROM artists ORDER BY name ASC");
+$result = mysql_query("SELECT * FROM artists WHERE numOfShows > 0 ORDER BY name ASC");
 
 //if no result
 if(!$result){

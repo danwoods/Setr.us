@@ -49,6 +49,7 @@ if(!isset($_SESSION['username'])){
 			dataType: "html",
 			success: function (html) {				
 				//if success, append to band select
+        alert(html);
 				$("#band_default_selection").after(html);
       },
       error:function (XMLHttpRequest, textStatus, errorThrown){
@@ -194,7 +195,6 @@ if(!isset($_SESSION['username'])){
 		  //add song
 		  addSong($(setElmClone));
 		  //add "add song" functionality
-		  /*add song functionality*/
 		  $('p.add_song', setElmClone).bind("click",function() {
 		    addSong($(setElmClone));
 	    });

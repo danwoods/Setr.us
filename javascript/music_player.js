@@ -136,7 +136,9 @@ function getTrack(index){
     var newnewindex = currElmId.substring(4,8);
     newnewindex = newnewindex - 0;
     clearInterval(highlight);
-    highlight = setInterval(function(){$('#' + currElmId).effect("highlight", {color: "#49a0e1", mode: "show"}, 2000);}, 1500);
+    alert("New highlight = " + '#' + currElmId);
+    //highlight = setInterval(function(){$('#' + currElmId).effect("highlight", {color: "#49a0e1", mode: "show"}, 2000);}, 1500);
+    highlight = setInterval(function(){$('#' + currElmId).animate({backgroundColor: "#49a0e1"}, 2000, function(){$('#' + currElmId).animate({backgroundColor: "#185D92"}, 2000)});}, 4000);
     
     //send info to flash
     getFlashMovie("music_player").changeTrack(trackLocation, song_info, newnewindex, 'false');

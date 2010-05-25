@@ -1020,7 +1020,7 @@ if(!isset($_SESSION['username'])){
         <div id='s01s01' class='song'>
           <div class="song_name_div">
             <h6>Song name:</h6>
-            <input type="text" name="s01s01_name" class="song_name_input" size="30" />
+            <input type="text" name="s01s01_name" class="song_name_input" size="25" />
           </div>
           <div class="song_loc_div">
             <h6>File location:</h6>

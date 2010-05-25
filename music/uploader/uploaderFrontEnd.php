@@ -16,6 +16,7 @@ if(!isset($_SESSION['username'])){
   <script type="text/javascript" src="javascript/jquery-ui-1.7.2.custom.min.js"></script>
   <script type="text/javascript" src="javascript/jquery.qtip-1.0.0-rc3.js"></script>
   <link rel=StyleSheet href="jquery-ui-1.7.2.custom.css" type="text/css" media=screen>
+  <link rel=StyleSheet href="uploaderFrontEnd.css" type="text/css" media=screen>
   <script type="text/javascript">
   <? echo "var username = '" . $_SESSION['username'] . "';";?>
   $(document).ready(function() {
@@ -789,303 +790,7 @@ if(!isset($_SESSION['username'])){
   });
 		
   </script>
-  <style type="text/css" media="screen">
   
-    iframe {
-      display: none;
-    }
-    
-    #header {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      height: 60px;
-    }
-    
-    .title {
-      position:relative;
-      margin-top: 45px;
-      margin-left:10px;
-      margin-botton:25px;
-      font-size: 20px;
-      font-family: Helvetica, sans-serif;
-    }
-    
-    #user_agreement {
-      font-size: 16px;
-    }
-    
-    .input_option {
-      float: left;
-      margin-left: 10px;
-      margin-top: -5px;
-      height: 30px;
-      width: 100%;
-    }
-    
-    .textarea {
-      height: 65px;
-    }
-
-    .input_header {
-      float: left;
-      width: 50px;
-      margin-left: 5px;
-      margin-top: 15px;
-    }
-    
-    #optional_inputs .input_header {
-      width: 100px;
-    }
-    
-    .input {
-      float: left;
-      margin-top: 15px;
-    }
-    
-    #opt_info_header {
-      position: relative;
-      left: 15px;
-      bottom: 5px;
-      font-size: 14px;
-      font-family: Verdana, sans-serif;
-      color: blue;
-      font-weight: bold;
-    }
-    
-    #required_inputs, #optional_inputs {
-      width: 475px;
-      /*"overflow: hidden" allows for auto-vertical expansion
-		  overflow: hidden;*/
-		  height: 95px;
-		  border-style:solid;
-      border-width:5px;
-      border-color: #49a0e1;
-      margin-top: 5px;
-      margin-left: 5px;
-		  background: #d8d8d8;
-		  font-family: Helvetica, sans-serif;
-		  font-size: 14px;
-		  
-		  -webkit-border-radius: 24px;
-      
-      -moz-border-radius: 24px;
-    }
-    
-    #optional_inputs {
-      display: none;
-      height: 315px;
-      width: 550px;
-    }
-    
-    .set, .encore {
-      width: 590px;
-      /*"overflow: hidden" allows for auto-vertical expansion*/
-		  overflow: hidden;
-		  border-style:solid;
-      border-width:5px;
-      border-color: #49a0e1;
-      margin-top: 5px;
-      margin-left: 5px;
-		  background: #d8d8d8;
-		  
-		  -webkit-border-radius: 24px;
-      
-      -moz-border-radius: 24px;
-    }
-    
-    .set h2, .encore h2 {
-      position: relative;
-      top: 2px;
-      left: 10px;
-      font-family: verdana;
-      font-size: 14px;
-      color: navy;      
-    }
-
-    .song {
-      position: relative;
-      margin-top: 5px;      
-      left: 10px;
-      width: 550px;
-		  height: 145px;
-      background: #7fbb11;
-      
-      -webkit-border-radius: 24px;
-      
-      -moz-border-radius: 24px;
-    }
-    
-		.song_name_div {
-		  float: left;
-		  margin-top: 10px;
-		  margin-left: 10px;
-		  width: 250px;
-		  height: 80px;
-		  background: #a2d164;
-		  
-		  -webkit-border-top-left-radius: 24px;
-      -webkit-border-bottom-left-radius: 24px;
-      
-      -moz-border-radius-topleft: 24px;
-      -moz-border-radius-bottomleft: 24px;
-		}
-		  
-    .song_name_div input {
-      position: relative;
-		  left: 18px;
-		  bottom: 35px;
-    }
-    
-    .song_name_div h6 {
-      position: relative;
-		  bottom: 20px;
-		  left: 10px;
-		  color: #F2EFE9;
-		  font-family: Verdana, sans-serif;
-		  font-size: 14px;
-    }
-    
-    /*song_loc_div's div positioning
-    meant as a reflection of song_name_div*/
-    .song_loc_div {
-      float: right;
-      margin-top: 10px;
-      margin-right: 30px;
-		  width: 250px;
-		  height: 80px;
-		  background: #a2d164;
-		  
-		  -webkit-border-top-right-radius: 24px;
-      -webkit-border-bottom-right-radius: 24px;
-      
-      -moz-border-radius-topright: 24px;
-      -moz-border-radius-bottomright: 24px;
-		}
-		  
-    .song_loc_div input {
-      position: relative;
-		  bottom: 35px;
-    }
-    
-    .song_loc_div h6 {
-      position: relative;
-		  bottom: 20px;
-		  left: 5px;
-		  color: #F2EFE9;
-		  font-family: Verdana, sans-serif;
-		  font-size: 14px;
-    }
-    
-    .segue_indic {
-      float: right;
-      margin-right: 7px;
-      margin-top: -70px;
-    }
-        
-    .addInfo {
-      float:left;
-      padding-left: 10px;
-      height: 20px;
-      width: 420px;
-    }
-    
-    .addInfo p {
-      font-size: 14px;
-      font-family: sans-serif;
-    }
-    
-    .addInfo textarea {
-      float: right;
-      margin-left: 120px;
-      margin-top: -30px;
-      width: 320px;
-      height: 16px;
-      font-family: Verdana, sans-serif;
-    }
-    
-    p.remove_song {
-      float: right;
-      margin-right: 10px;
-      margin-top: 35px;
-      height: 5px;
-      width: 95px;
-      font-family: helvetica, sans-serif;
-      font-size: 12px;
-      color: white;
-    }
-
-    p.add_song{
-      position: relative;
-      left: 15px;
-      bottom: 5px;
-      font-size: 14px;
-      font-family: Verdana, sans-serif;
-      color: blue;
-      font-weight: bold;
-    }
-    
-    p.remove_set {
-      float: right;
-      margin-right: 7px;
-      margin-top: -20px;
-      margin-bottom: -20px;
-      font-size: 14px;
-      font-family: Verdana, sans-serif;
-      color: blue;
-      font-weight: bold;
-    }
-    
-    #set1 p.remove_set {
-      display: none;
-    }
-
-    p.add_set{
-      position: relative;
-      left: 15px;
-      bottom: 5px;
-      font-size: 14px;
-      font-family: Verdana, sans-serif;
-      color: blue;
-      font-weight: bold;
-    }
-    
-    p.add_encore {
-      position: relative;
-      left: 15px;
-      bottom: 5px;
-      font-size: 14px;
-      font-family: Verdana, sans-serif;
-      color: blue;
-      font-weight: bold;
-    }
-    
-    #submit {
-      float: left;
-      margin-left: 260px;
-    }
-    
-    #user_agreement em{
-      font-size: 18px;
-      font-weight: bold;
-    }
-    
-    #submit_dialog p {
-      color: red;
-      font-size: 16px;
-    }
-    
-    .song_upload_results {
-      float: left;
-      margin-left: 55px;
-      margin-top: 15px;
-      color: white;
-      font-family: Helvetica, arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-	</style>
 </head>
 <body>
   <div id="header">
@@ -1094,7 +799,7 @@ if(!isset($_SESSION['username'])){
   
     <!--Starting modal dialog box-->
     <div id="user_agreement" title="User Upload Agreement">
-	<p><em>Reminder:</em> Never upload any material which is copyrighted or you think may be copyrighted. Setr.com is only interested in audience recorded audio or audio which has been officially released by the artist to be publicly traded.</p>
+	<p><em>Reminder:</em> Never upload any material which is copyrighted or you think may be copyrighted. Setr.us is only interested in audience recorded audio or audio which has been officially released by the artist to be publicly traded.</p>
 </div>
   
     <h1 class="title">Enter Show Information:</h1>
@@ -1202,7 +907,7 @@ if(!isset($_SESSION['username'])){
     <div class="input_option">
       <p class="show_loc_heading input_header">Where:</p>
       <div class="show_loc_input input">
-        <input type="text" name="city" value="City" />
+        <input id="city_input" type="text" name="city" value="City" />
         <select name="state">
           <option>State</option>
           <option>AL</option>
@@ -1257,7 +962,7 @@ if(!isset($_SESSION['username'])){
           <option>WY</option>
         </select>
 
-        <input type="text" name="venue" value="Venue (may be left blank)" />
+        <input id="venue_input" type="text" name="venue" value="Venue (may be left blank)" />
       </div>
     </div>
     </div>

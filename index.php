@@ -45,7 +45,7 @@ if(!isset($_SESSION['username'])){
   <div id="login_register">
   <?php 
     if(isset($_SESSION['username'])){
-      echo "<div id=\"user_settings_button\" onclick=\"javascript:window.open('http://localhost/MSNTesting/uploader/uploaderFrontEnd.php')\">" . /*($_SESSION['username']) . " : settings*/"Upload</div>";
+      echo "<div id=\"user_settings_button\" onclick=\"javascript:window.open('http://localhost/Setr.us/music/uploader/uploaderFrontEnd.php')\">" . /*($_SESSION['username']) . " : settings*/"Upload</div>";
       echo "<div id=\"logout_button\" " . "onclick=\"javascript:location='http://localhost/Setr.us/php/logout.php'\">" . "Logout" . "</div>";
       }
     else{

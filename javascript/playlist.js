@@ -230,7 +230,8 @@ function p_handleServerResponse_test(droppableId, elementId){
 
     
   }//end for
-reOrder();                                                    
+reOrder();              
+//I don't know why this doesn't throw an error. I can't find reColor() anywhere                                  
 reColor();
 
 //reset playlist variable

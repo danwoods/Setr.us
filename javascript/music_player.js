@@ -2,7 +2,9 @@
 //thisMovie("music_player").nameofflashfunction(para);
 //
 
-var highlight;                              //used to pass the setInterval object between functions
+var highlight;                         //used to pass the setInterval object between functions
+var currently_playing = $('#empty');   //used to hold the currently playing song, useful in stopping "flash" animation
+
 function getFlashMovie(movieName) {
   var isIE = navigator.appName.indexOf("Microsoft") != -1;
   return (isIE) ? window[movieName] : document[movieName];  }
@@ -28,13 +30,17 @@ function getStrings(elm, strings){
   }
 }
 
-
 function getTrack(index){
   /*This function is called from the flash player 
    * as well as when individual tracks in the playlist 
    * are double clicked, and returns the next track*/
   
+  //stop currently playing song from flashing/pulsing
+  currently_playing.stop(true, false);
   clearInterval(highlight);
+  //and reset colors
+  $("#playlist .playlist_item:even").css("background", "#d6d6d6");
+  $("#playlist .playlist_item:odd").css("background", "#b3b3b3");
   
   //check to see if there are any songs in the playlist
     if( $('#playlist > *').length < 2 ){
@@ -134,12 +140,14 @@ function getTrack(index){
     
     //setup index to send flash
     var newnewindex = currElmId.substring(4,8);
+    //convert to Number
     newnewindex = newnewindex - 0;
     clearInterval(highlight);
     alert("New highlight = " + '#' + currElmId);
-    //highlight = setInterval(function(){$('#' + currElmId).effect("highlight", {color: "#49a0e1", mode: "show"}, 2000);}, 1500);
-    highlight = setInterval(function(){$('#' + currElmId).animate({backgroundColor: "#49a0e1"}, 2000, function(){$('#' + currElmId).animate({backgroundColor: "#185D92"}, 2000)});}, 4000);
-    
+    //NO!!highlight = setInterval(function(){$('#' + currElmId).effect("highlight", {color: "#49a0e1", mode: "show"}, 2000);}, 1500);
+    //highlight = setInterval(function(){$('#' + currElmId).animate({backgroundColor: "#49a0e1"}, 2000, function(){$('#' + currElmId).animate({backgroundColor: "#185D92"}, 2000)});}, 4000);
+    highlight = setInterval(function(){$('#' + currElmId).animate({backgroundColor: "#49a0e1"}, 2000).animate({backgroundColor: "#185D92"}, 2000);}, 4000);
+    currently_playing = $('#' + currElmId);
     //send info to flash
     getFlashMovie("music_player").changeTrack(trackLocation, song_info, newnewindex, 'false');
     

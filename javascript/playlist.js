@@ -2,8 +2,8 @@
 /******************************************
  * Filename: playlist.js
  * Description: javascript functions pertaining to the playlist
- * To-Do: reColor()
- * Last Updated: 6/6/09
+ * To-Do: Clean up, use jQuery for ajax
+ * Last Updated: 5/27/10
  * Notes: Need to streamline the usage of reOrder(), I 
  *        feel like it's not being used effeciently
  ******************************************/

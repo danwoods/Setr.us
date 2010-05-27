@@ -508,7 +508,7 @@ getSongLength('start');
 }
 
 function unSetHighlight(index){
-  alert("called unset highlight");
+  //alert("called unset highlight");
   //clearInterval(highlight);
 }
 

@@ -284,7 +284,7 @@ table#playlist{
   -moz-border-radius: 5px;
   }
   
-.playlist_item { 
+#playlist .playlist_item { 
   background: #d6d6d6;
   }
   

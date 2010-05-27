@@ -35,13 +35,6 @@ function getTrack(index){
    * as well as when individual tracks in the playlist 
    * are double clicked, and returns the next track*/
   
-  //stop currently playing song from flashing/pulsing
-  currently_playing.stop(true, false);
-  clearInterval(highlight);
-  //and reset colors
-  $("#playlist .playlist_item:even").css("background", "#d6d6d6");
-  $("#playlist .playlist_item:odd").css("background", "#b3b3b3");
-  
   //check to see if there are any songs in the playlist
     if( $('#playlist > *').length < 2 ){
       alert("add songs to the playlist!!");
@@ -122,37 +115,43 @@ function getTrack(index){
     }).responseText;
     
     //get show date
-    /*
-    for( var i = 0; i < bandElm.length; ++i){
-        if ( bandElm[i].getAttribute("class") === 'song_date'){
-          var showDate = bandElm[i].firstChild.data;
-          }
-        }*/
     var showDate = $('#' + currElmId + ' .playlist_item_date').text();
     
+    //setup track info
     song_info = songName + ' ' + artist + ' ' + showDate + ' ' + location;
+    
+    /*setup track location*/
     var trackDirectory = "music_directory" + "\/" + newAbb + "\/" + newAbb + showDate;
-    //alert("track directory = " + trackDirectory);
+    
     trackLocation = trackLocation + ".mp3";
-    //alert("track Location = " + trackLocation);
     
     trackLocation = trackDirectory + "\/" + trackLocation;
     
     //setup index to send flash
     var newnewindex = currElmId.substring(4,8);
+    
     //convert to Number
     newnewindex = newnewindex - 0;
+    
+    /*clear old highlight*/
+    //stop currently playing song from flashing/pulsing
+    currently_playing.stop(true, false);
     clearInterval(highlight);
-    alert("New highlight = " + '#' + currElmId);
-    //NO!!highlight = setInterval(function(){$('#' + currElmId).effect("highlight", {color: "#49a0e1", mode: "show"}, 2000);}, 1500);
-    //highlight = setInterval(function(){$('#' + currElmId).animate({backgroundColor: "#49a0e1"}, 2000, function(){$('#' + currElmId).animate({backgroundColor: "#185D92"}, 2000)});}, 4000);
+    //and reset colors
+    $("#playlist .playlist_item:odd").css("background", "#d6d6d6");
+    $("#playlist .playlist_item:even").css("background", "#b3b3b3");
+    
+    //set highlight
     highlight = setInterval(function(){$('#' + currElmId).animate({backgroundColor: "#49a0e1"}, 2000).animate({backgroundColor: "#185D92"}, 2000);}, 4000);
+    
+    //but, since the interval takes 4000 ms before it starts, start the animation immediately, here
+    $('#' + currElmId).animate({backgroundColor: "#49a0e1"}, 2000).animate({backgroundColor: "#185D92"}, 2000);
+    
+    //set new currently playing
     currently_playing = $('#' + currElmId);
+    
     //send info to flash
     getFlashMovie("music_player").changeTrack(trackLocation, song_info, newnewindex, 'false');
-    
-    //alert ("new index being sent to flash = " + newnewindex);
-    //resetFlashPlayerIndex(currElmId.substring(0,4));
   }
 
 function abb(artistFullName){

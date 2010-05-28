@@ -15,6 +15,9 @@ if(isset($_SESSION['username'])){
 //http://www.queness.com/post/160/create-a-ajax-based-form-submission-with-jquery
 $(document).ready(function() {
 	
+  //set focus to username
+  $('#name').focus();
+  
 	//if submit button is clicked
 	$('#submit').click(function () {		
 		

@@ -49,7 +49,7 @@ if(!isset($_SESSION['username'])){
 			dataType: "html",
 			success: function (html) {				
 				//if success, append to band select
-        alert(html);
+        //alert(html);
 				$("#band_default_selection").after(html);
       },
       error:function (XMLHttpRequest, textStatus, errorThrown){
@@ -75,9 +75,20 @@ if(!isset($_SESSION['username'])){
                  $("#required_inputs .date_input [name='day'] option:selected").text());
     });
     
-    /*optional info functionality*/
+    /*optional info fade in/out functionality*/
 	  $('#opt_info_header').bind("click", function() {
-	    $('#optional_inputs').fadeIn("slow");
+      if($('#optional_inputs').hasClass('hidden')){
+        $('#optional_inputs').fadeIn("slow");
+        $('#optional_inputs').removeClass("hidden");
+        $('#optional_inputs').addClass("visible");
+        $('#opt_info_header').text("Optional Information -");
+      }
+      else{
+        $('#optional_inputs').fadeOut("slow");
+        $('#optional_inputs').removeClass("visible");
+        $('#optional_inputs').addClass("hidden");
+        $('#opt_info_header').text("Optional Information +");
+      }
     });  
 	    
     /*add song functionality*/
@@ -969,7 +980,7 @@ if(!isset($_SESSION['username'])){
     
     <p id="opt_info_header">Optional Information +</p>
     
-    <div id="optional_inputs">
+    <div id="optional_inputs" class="hidden">
     <div class="input_option">
       <p class="input_header">Taped by:</p>
       <div class="input">

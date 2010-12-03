@@ -56,13 +56,13 @@ if(mysql_num_rows($result) > 0){
     die(mysql_error());
     }
 
+  //if still alive setup xml structure
+  $dom = new DOMDocument();
+  $response = $dom->createElement('response');
+  $dom->appendChild($response);
+
   //check if any results were returned
   if(mysql_num_rows($result) > 0){
-    
-    //if yes setup xml structure
-    $dom = new DOMDocument();
-    $response = $dom->createElement('response');
-    $dom->appendChild($response);
     
     //while there are results, cycle through them
     while($row = mysql_fetch_array($result)){
@@ -128,13 +128,14 @@ if(mysql_num_rows($result) > 0){
    
       }//end while
     
-    $xmlString = $dom->saveXML(); 
-    echo $xmlString;
+    
   }//end if(rows $result)
   
   else {
-    echo 0;
   }
+
+  $xmlString = $dom->saveXML(); 
+  echo $xmlString;
 
 ?>
 

@@ -72,7 +72,9 @@ function expand(callingImg, artist, request, username){
         else if(request == "shows")
 	        addShows(artist, request, origElm, data);
         else if(request == "songs")
-	        addSongs(artist, request, origElm, data);	      
+	        addSongs(artist, request, origElm, data);
+        else
+          alert("Sorry there was an error retrieving that data, we're looking into it");
       },
       //on error
       error:function (XMLHttpRequest, textStatus, errorThrown){

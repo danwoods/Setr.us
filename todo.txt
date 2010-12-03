@@ -1,4 +1,3 @@
 Fix Phish hang-up
-Fix whole show dragging
 Create .js file to handle common things around the site (ie: error class) and place it in every header file
 

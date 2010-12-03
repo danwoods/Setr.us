@@ -8,7 +8,6 @@
  *        feel like it's not being used effeciently
  ******************************************/
 
-var xmlHttp = createXmlHttpRequestObject();
 var currPositionInPL = 0;
 var playlistTitle = "Untitled";
 var playlist_loaded = 'false';

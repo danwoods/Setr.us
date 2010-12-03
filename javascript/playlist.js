@@ -56,7 +56,7 @@ function p_process_test(ui, droppable){
   var droppableId = droppable.attr('id');
   var newSong = $(ui.draggable);
   
-  //alert($(newSong).attr('class') + ', ' + $(newSong).attr('id'));
+  alert($(newSong).attr('class') + ', ' + $(newSong).attr('id'));
 
   
   //check if element has class to make it identifiable
@@ -91,7 +91,8 @@ function p_process_test(ui, droppable){
     
     else if(newSong.hasClass('song')||newSong.hasClass('artist')||
             newSong.hasClass('year')||newSong.hasClass('show')||
-            newSong.hasClass('set')||newSong.hasClass('playlist')){
+            newSong.hasClass('set')||newSong.hasClass('playlist')||newSong.hasClass('encore')){
+              //alert("past else");
               
     //account for clones
     if(elementId.match("clone_")){

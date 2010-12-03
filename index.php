@@ -92,11 +92,11 @@ if(!isset($_SESSION['username'])){
   <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
              id="music_player" width="350" height="25"
              codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">
-         <param name="movie" value="music_player.swf" />
+         <param name="movie" value="flashplayer/current/music_player.swf" />
          <param name="quality" value="high" />
          <param name="bgcolor" value="#ffffff" />
          <param name="allowScriptAccess" value="always" />
-         <embed src="music_player.swf" quality="high" bgcolor="#ffffff"
+         <embed src="flashplayer/current/music_player.swf" quality="high" bgcolor="#ffffff"
              width="450" height="25" name="music_player" align="middle"
              play="true" loop="false" quality="high" allowScriptAccess="always"
              type="application/x-shockwave-flash"

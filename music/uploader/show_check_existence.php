@@ -20,7 +20,7 @@ if(!$con){
   die('Could not connect: ' . mysql_error());
   }
 
-mysql_select_db("musicneverstopped", $con);
+mysql_select_db("setr.us_db", $con);
 //end connecting to database
 
 //request a listing of all shows with same id as the one about to be uploaded

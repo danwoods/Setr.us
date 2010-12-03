@@ -418,8 +418,8 @@ if(!isset($_SESSION['username'])){
       var setOrEncore = "";
       var show_xml = "<show "; //xml to be passed to the database      
       
-      show_xml += "id='" + showId + "' >";
-      show_xml += "<artist abb='" + band_abb + "'>" + full_band_name + "</artist>";
+      show_xml += "id=\"" + showId + "\">";
+      show_xml += "<artist abb=\"" + band_abb + "\">" + full_band_name + "</artist>";
       show_xml += "<date><year>" + year + "</year><month>" + month + "</month><day>" + day + "</day></date>";
       show_xml += "<location><city>" + city + "</city><state>" + state + "</state></location>";
       
@@ -430,7 +430,7 @@ if(!isset($_SESSION['username'])){
         if($(this).hasClass('set')){
           uploaded_sets++;
           setOrEncore = "set";
-          show_xml += "<set id='";
+          show_xml += "<set id=\"";
           if (uploaded_sets < 10)
             var setId = showId + "s0" + uploaded_sets;
           else
@@ -441,14 +441,14 @@ if(!isset($_SESSION['username'])){
         else{
           uploaded_encores++;
           setOrEncore = "encore";
-          show_xml += "<encore id='";
+          show_xml += "<encore id=\"";
           if (uploaded_encores < 10)
             var setId = showId + "e0" + uploaded_encores;
           else
             var setId = showId + "e" + uploaded_encores;
         }          
           
-        show_xml += setId + "' >";
+        show_xml += setId + "\" >";
           
         //move through the current set's songs
         $(".song", this).each(function (i) {
@@ -468,7 +468,7 @@ if(!isset($_SESSION['username'])){
           else
             partOfASeuge = 0;
           
-          show_xml += "<song id='" + songId + "' partOfASeuge='" + partOfASeuge + "' ><song_name>" + songName + "</song_name><song_addInfo>" + addInfo + "</song_addInfo></song>";
+          show_xml += "<song id=\"" + songId + "\" partOfASeuge=\"" + partOfASeuge + "\" ><song_name>" + songName + "</song_name><song_addInfo>" + addInfo + "</song_addInfo></song>";
             
           /*create an "invisible" form to take advantage of php's '$_FILES' object*/
           var form_id = "UpId" + songId;
@@ -514,7 +514,7 @@ if(!isset($_SESSION['username'])){
         });
         
         show_xml += "</show>";
-                
+        
         $.ajax({
           url: 'uploadShow.php',
           type: "POST",
@@ -720,6 +720,9 @@ if(!isset($_SESSION['username'])){
     
       //get server response
       var serverResponse = $('#' + form_id).contents().find('body').text();
+      
+      //debug
+      alert(serverResponse);
     
       //remove iframe
       $('#' + form_id).remove();
@@ -786,9 +789,7 @@ if(!isset($_SESSION['username'])){
                            }
               });
               
-              /*
-              
-                */
+
               $("#required_inputs .date_input select[name='year']").attr('value', 'Year');
               $("#required_inputs .date_input select[name='month']").attr('value', 'Month');
               $("#required_inputs .date_input select[name='day']").attr('value', 'Day');
@@ -860,6 +861,16 @@ if(!isset($_SESSION['username'])){
           <option>1983</option>
           <option>1982</option>
           <option>1981</option>
+          <option>1980</option>
+          <option>1979</option>
+          <option>1978</option>
+          <option>1977</option>
+          <option>1976</option>
+          <option>1975</option>
+          <option>1974</option>
+          <option>1973</option>
+          <option>1972</option>
+          <option>1971</option>
         </select>
       
         <select name="month">

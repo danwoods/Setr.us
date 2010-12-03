@@ -25,8 +25,8 @@ $songName = $_POST['songName'];
 $addInfo = $_POST['addInfo'];
 
 //resolve where the file should be stored
-$band_dir = "/opt/lampp/htdocs/musicneverstopped/music_directory/" . $abb;
-$file_dir = "/opt/lampp/htdocs/musicneverstopped/music_directory/" . $abb . "/" . $showId . "/";
+$band_dir = "/opt/lampp/htdocs/Setr.us/music_directory/" . $abb;
+$file_dir = "/opt/lampp/htdocs/Setr.us/music_directory/" . $abb . "/" . $showId . "/";
 
 //check if the neccessary directory exist, if not create it
 if(!is_dir($band_dir)){

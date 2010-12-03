@@ -83,29 +83,33 @@ font-size: 12px;
 }
 
 div#user_settings_button{
-position: absolute;
-top: 10px;
-left: 70px;
-white-space: nowrap;
-}
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  white-space: nowrap;
+  cursor: pointer;
+  }
 
 div#login_button{
-position: absolute;
-top: 10px;
-left: 10px;
-}
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  }
 
 div#register_button{
-position: absolute;
-top: 10px;
-left: 90px;
-}
+  position: absolute;
+  top: 10px;
+  left: 90px;
+  cursor: pointer;
+  }
  
 div#logout_button{
-position: absolute;
-top: 10px;
-left: 140px;
-} 
+  position: absolute;
+  top: 10px;
+  left: 140px;
+  cursor: pointer;
+  } 
   
 div#catalogueContainer{
   position: absolute;
@@ -164,7 +168,6 @@ div#catalogueContainer{
   
 .song {
   position: relative;
-  /*top: -250px;*/
   top: 1px;
   margin-left: 5px;
   font-family: Helvetica, arial, sans-serif;
@@ -183,27 +186,28 @@ div#playlistContainer{
   width: 600px;
   height: 330px;
   }
+  
 div#playlist_controls{
-position: absolute;
-top: 0px;
-left: 10px;
-height: 25px;
-}  
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  height: 25px;
+  }  
 
 div#playlist_title{
-position: absolute;
-left: 5px;
-}
+  position: absolute;
+  left: 5px;
+  }
 
 div#playlist_save{
-position: absolute;
-left: 410px;
-}
+  position: absolute;
+  left: 410px;
+  }
 
 div#playlist_clear{
-position: absolute;
-left: 495px;
-}
+  position: absolute;
+  left: 495px;
+  }
 
 .button{
   display:block;
@@ -228,10 +232,6 @@ left: 495px;
   text-indent:35px;
   display:block;
 }
-/*hover.button{
-color:#0066CC;
-}
-*/
 
 table#playlist{
   position: absolute;

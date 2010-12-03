@@ -507,9 +507,14 @@ function setHighlight(elmId, index, songLength){
 getSongLength('start');
 }
 
-function unSetHighlight(index){
-  //alert("called unset highlight");
-  //clearInterval(highlight);
+function unSetHighlight(){
+  /*clear old highlight*/
+  //stop currently playing song from flashing/pulsing
+  currently_playing.stop(true, false);
+  clearInterval(highlight);
+  //and reset colors
+  $("#playlist .playlist_item:odd").css("background", "#d6d6d6");
+  $("#playlist .playlist_item:even").css("background", "#b3b3b3");
 }
 
 function clear_playlist(){

@@ -65,7 +65,7 @@ else*/
     die('Could not connect: ' . mysql_error());
   }
   
-  mysql_select_db("musicneverstopped", $con);
+  mysql_select_db("setr.us_db", $con);
   //end connecting to database
     
   //add show information to database

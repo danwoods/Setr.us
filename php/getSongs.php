@@ -127,10 +127,14 @@ if(mysql_num_rows($result) > 0){
         }
    
       }//end while
-    }//end if(rows $result)
-$xmlString = $dom->saveXML(); 
-echo $xmlString;
-
+    
+    $xmlString = $dom->saveXML(); 
+    echo $xmlString;
+  }//end if(rows $result)
+  
+  else {
+    echo 0;
+  }
 
 ?>
 

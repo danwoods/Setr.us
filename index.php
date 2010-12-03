@@ -20,7 +20,6 @@ if(!isset($_SESSION['username'])){
   <script type="text/javascript" src="javascript/jquery.qtip-1.0.0-rc3.js"></script>
   <script type="text/javascript" src="javascript/playlist.js"></script>
   <script type="text/javascript" src="javascript/music_player.js"></script>
-  <!--<script type="text/javascript" src="javascript/dragdropextra.js"></script>-->
   <script type="text/javascript" src="javascript/site_updating.js"></script>
   <script type="text/javascript" src="javascript/jquery.fixedheadertable.1.0.js"></script>
   

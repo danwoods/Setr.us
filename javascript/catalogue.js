@@ -56,30 +56,30 @@ function expand(callingImg, artist, request, username){
 	    data: params,
 	    cache: false,
 	    async: false,
-	    dataType: "xml",
+	    //dataType: "xml",
 			
 	    //on success
-	    success: function (xml) {
+	    success: function (data) {
 	    
 	      //change arrow image
 			  $(callingImg).attr("src","images/16-arrow-down.png");
 			
 			  //call function to handle xml traversal and placement
 			  if(request == "artists")
-	        addArtists(artist, request, origElm, xml);
+	        addArtists(artist, request, origElm, data);
         else if(request == "years")
-	        addYears(artist, request, origElm, xml);
+	        addYears(artist, request, origElm, data);
         else if(request == "shows")
-	        addShows(artist, request, origElm, xml);
+	        addShows(artist, request, origElm, data);
         else if(request == "songs")
-	        addSongs(artist, request, origElm, xml);	      
+	        addSongs(artist, request, origElm, data);	      
       },
       //on error
       error:function (XMLHttpRequest, textStatus, errorThrown){
-      
-        alert("ERROR!");
-        alert('textStatus = ' + textStatus + '\n' + 
-            'errorThrown = ' + errorThrown);
+        alert("Sorry there was an error retrieving that data, we're looking into it");
+        //alert("ERROR!");
+        //alert('textStatus = ' + textStatus + '\n' + 
+          //  'errorThrown = ' + errorThrown);
       }       
    
   });
